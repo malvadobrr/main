@@ -1,25 +1,25 @@
-<!DOCTYPE html>
-    <html>
-    <head>
-    <meta charset=utf-8 />
-    <title>Your title</title>
-      
-    
-      <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
-      <script src="https://unpkg.com/video.js/dist/video.js"></script>
-      <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
-       
-    </head>
-    <body>
-      <video id="my_video_1" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
-      data-setup='{}'>
-        <source src="https://klive.kaltura.com/s/env/cluster-1-a.live.nvp1/live/hls/p/4611563/e/1_hz795xeq/tl/main/st/0/t/X76ST_J1ww_wXNavzw6IxQ/index-s32.m3u8?__hdnea__=st=1651773121~exp=1651859521~acl=/s/env/cluster-1-a.live.nvp1/live/hls/p/4611563/e/1_hz795xeq/tl/main/st/0/t/X76ST_J1ww_wXNavzw6IxQ/index-s32.m3u8*~hmac=d959f3e288cc8fd925f9dcad9a7c482fda3699a70cacea137abdf3c682bf0a36" type="application/x-mpegURL">
-      </video>
-      
-    <script>
-    var player = videojs('my_video_1');
-    player.play();
-    </script>
-      
-    </body>
-    </html>
+<link rel="stylesheet" href="//releases.flowplayer.org/7.0.4/commercial/skin/skin.css">
+    <style>
+
+   </style>
+   <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="//releases.flowplayer.org/7.0.4/commercial/flowplayer.min.js"></script>
+  <script src="//releases.flowplayer.org/hlsjs/flowplayer.hlsjs.min.js"></script> 
+  <script>
+  flowplayer(function (api) {
+    api.on("load", function (e, api, video) {
+      $("#vinfo").text(api.engine.engineName + " engine playing " + video.type);
+    }); });
+  </script>
+
+<div class="flowplayer fixed-controls no-toggle no-time play-button obj"
+      style="    width: 85.5%;
+    height: 80%;
+    margin-left: 7.2%;
+    margin-top: 6%;
+    z-index: 1000;" data-key="$812975748999788" data-live="true" data-share="false" data-ratio="0.5625"  data-logo="">
+      <video autoplay="true" stretch="true">
+
+         <source type="application/x-mpegurl" src="https://prod-ec-us-west-2.video.pscp.tv/Transcoding/v1/hls/HOxIVmeW_Ql9_MBrEvmXCJoRRfk46jmpeYfUJ2eq0QF_yQCAanerXCGtN0-uXynNiMbxBQG9oEGrm8yewMKKKQ/transcode/us-west-2/periscope-replay-direct-prod-us-west-2-public/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInZlcnNpb24iOiIyIn0.eyJFbmNvZGVyU2V0dGluZyI6ImVuY29kZXJfc2V0dGluZ183MjBwMzBfMTAiLCJIZWlnaHQiOjcyMCwiS2JwcyI6Mjc1MCwiV2lkdGgiOjEyODB9.ldktM4fCFRfkP4ZEBfZPKtlAUNAcTPkoz994YJAzWpE/dynamic_highlatency.m3u8?type=live">
+      </video>   
+   </div>
