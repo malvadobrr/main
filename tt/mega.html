@@ -1,25 +1,32 @@
-<!DOCTYPE html>
-    <html>
-    <head>
-    <meta charset=utf-8 />
-    <title>Your title</title>
-      
-    
-      <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
-      <script src="https://unpkg.com/video.js/dist/video.js"></script>
-      <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
-       
-    </head>
-    <body>
-      <video id="my_video_1" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
-      data-setup='{}'>
-        <source src="https://prod-ec-sa-east-1.video.pscp.tv/Transcoding/v1/hls/8ijB4Mjk9_-ahp6WqOElVICLpvL7Jw8wskMKaWWw_Bg0mepTKsWk3sTt4B9Bd2g-gLghHivK5_15S89aLXCpCQ/non_transcode/sa-east-1/periscope-replay-direct-prod-sa-east-1-public/master_dynamic_highlatency.m3u8?type=live" type="application/x-mpegURL">
-      </video>
-      
+   <div class="parent">
+           <div class="vi"> 
+            <video class="video-player" id="vid1" controls> <source src="https://writesonic.com/static/landingpage/dist/images/willscheren.mp4" type="video/mp4"> </video>
+        </div>
+       <div class="vi"> 
+            <video class="video-player" id="vid1" controls> <source src="https://prod-ec-sa-east-1.video.pscp.tv/Transcoding/v1/hls/8ijB4Mjk9_-ahp6WqOElVICLpvL7Jw8wskMKaWWw_Bg0mepTKsWk3sTt4B9Bd2g-gLghHivK5_15S89aLXCpCQ/non_transcode/sa-east-1/periscope-replay-direct-prod-sa-east-1-public/master_dynamic_highlatency.m3u8?type=live" type="video/mp4"> </video>
+        </div> <div class="vi"> 
+            <video class="video-player" id="vid1" controls> <source src="https://writesonic.com/static/landingpage/dist/images/willscheren.mp4" type="video/mp4"> </video>
+        </div> <div class="vi"> 
+            <video class="video-player" controls> <source src="https://writesonic.com/static/landingpage/dist/images/willscheren.mp4" type="video/mp4"> </video>
+        </div> <div class="vi"> 
+            <video class="video-player" controls> <source src="https://writesonic.com/static/landingpage/dist/images/willscheren.mp4" type="video/mp4"> </video>
+        </div>
+              
+
+
+  </div>
+
     <script>
-    var player = videojs('my_video_1');
-    player.play();
+function isOnScreen(element)
+{
+    var curPos = element.offset();
+    var curTop = curPos.top;
+    var screenHeight = $(window).height();
+    return (curTop > screenHeight) ? false : true;
+}
+
+if(isOnScreen($('video'))) {
+console.log("")
+
+ };
     </script>
-      
-    </body>
-    </html>
