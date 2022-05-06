@@ -1,40 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Rede S&eacute;culo 21 - AO VIVO</title>
-<meta name="generator" content="Bluefish 2.2.10" >
-<meta name="author" content="Francisco C Soares" >
-<meta name="date" content="2017-06-30T11:23:37-0300" >
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8">
-<meta http-equiv="content-style-type" content="text/css">
- 
-<!-- http://videojs.com/ -->
-<link href="//cdnjs.cloudflare.com/ajax/libs/video.js/6.2.1/video-js.min.css" rel="stylesheet">
-<script src="///cdnjs.cloudflare.com/ajax/libs/video.js/6.2.1/video.min.js"></script>
- 
+<script src="https://unpkg.com/video.js@6.7.1/dist/video.js"></script>
+<script src="https://unpkg.com/@videojs/http-streaming@0.9.0/dist/videojs-http-streaming.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+<title>Who Cares</title>
 </head>
-<body>
- 
-<video
-    id="rs21"
-    width="640"
-    height="360"
-    class="video-js vjs-default-skin"
-    controls
-    poster="//lh3.googleusercontent.com/cbE0oPcN9ybGpP-VNVkz9AEnzWezqdbXXdEBcsWI0PLbCYQwPYYEMGJW-C253khNNRk">
-    <source
-        src="https://prod-ec-us-west-2.video.pscp.tv/Transcoding/v1/hls/HOxIVmeW_Ql9_MBrEvmXCJoRRfk46jmpeYfUJ2eq0QF_yQCAanerXCGtN0-uXynNiMbxBQG9oEGrm8yewMKKKQ/transcode/us-west-2/periscope-replay-direct-prod-us-west-2-public/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInZlcnNpb24iOiIyIn0.eyJFbmNvZGVyU2V0dGluZyI6ImVuY29kZXJfc2V0dGluZ183MjBwMzBfMTAiLCJIZWlnaHQiOjcyMCwiS2JwcyI6Mjc1MCwiV2lkdGgiOjEyODB9.ldktM4fCFRfkP4ZEBfZPKtlAUNAcTPkoz994YJAzWpE/dynamic_highlatency.m3u8?type=live"
-        type="application/x-mpegURL">
-</video>
- 
-<!-- http://videojs.com/plugins/ -->
-<!-- https://npmjs.org/package/videojs-contrib-hls -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.7.0/videojs-contrib-hls.min.js"></script>
-<script>
-var player = videojs('rs21');
-player.play();
-</script>
- 
+  <body>
+  <video-js id="my_video_1" class="vjs-default-skin" controls preload="auto" width="640" height="268">
+    <source src="https://prod-ec-us-west-2.video.pscp.tv/Transcoding/v1/hls/HOxIVmeW_Ql9_MBrEvmXCJoRRfk46jmpeYfUJ2eq0QF_yQCAanerXCGtN0-uXynNiMbxBQG9oEGrm8yewMKKKQ/transcode/us-west-2/periscope-replay-direct-prod-us-west-2-public/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInZlcnNpb24iOiIyIn0.eyJFbmNvZGVyU2V0dGluZyI6ImVuY29kZXJfc2V0dGluZ183MjBwMzBfMTAiLCJIZWlnaHQiOjcyMCwiS2JwcyI6Mjc1MCwiV2lkdGgiOjEyODB9.ldktM4fCFRfkP4ZEBfZPKtlAUNAcTPkoz994YJAzWpE/dynamic_highlatency.m3u8?type=live" type="application/x-mpegURL">
+  </video-js>
+  
+  <script src="https://unpkg.com/video.js/dist/video.js"></script>
+  <script src="https://unpkg.com/@videojs/http-streaming/dist/videojs-http-streaming.js"></script>
+  
+  <script>
+    var player = videojs('my_video_1');
+  </script>
 </body>
 </html>
