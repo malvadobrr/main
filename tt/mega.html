@@ -1,28 +1,23 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Video</title>
-    <meta charset="utf-8" />
-    <style>
-        body {
-            background: brown;
-            color: #CCCCCC;
-        }
-    </style>
 
-    <script src="video.js"></script>
-    <script src="videojs.hls.min.js"></script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Streaming</title>
+    <link href="https://vjs.zencdn.net/7.17.0/video-js.css" rel="stylesheet" />
+    <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
+
     <script>
-    var player = videojs('example-video');
-    player.play();
+     function run() {
+        var player = videojs('#player', { controls: true }, {'nativeAudioTracks': false, 'nativeVideoTracks': false, 'hls': { 'overrideNative': true } });        
+        player.playsinline(true);            
+     }
     </script>
 </head>
-<body>
-    <video id=example-video width=960 height=540 class="video-js vjs-default-skin" controls>
-  <source
-     src="https://prod-ec-sa-east-1.video.pscp.tv/Transcoding/v1/hls/8ijB4Mjk9_-ahp6WqOElVICLpvL7Jw8wskMKaWWw_Bg0mepTKsWk3sTt4B9Bd2g-gLghHivK5_15S89aLXCpCQ/non_transcode/sa-east-1/periscope-replay-direct-prod-sa-east-1-public/master_dynamic_highlatency.m3u8?type=live"
-     type="application/x-mpegURL">
-</video>
+<body onLoad="run()">
 
+    <audio id="player" class="video-js vjs-default-skin" style="height:100px; width:300px" controls >
+        <source src="https://prod-ec-sa-east-1.video.pscp.tv/Transcoding/v1/hls/8ijB4Mjk9_-ahp6WqOElVICLpvL7Jw8wskMKaWWw_Bg0mepTKsWk3sTt4B9Bd2g-gLghHivK5_15S89aLXCpCQ/non_transcode/sa-east-1/periscope-replay-direct-prod-sa-east-1-public/master_dynamic_highlatency.m3u8?type=live" type="application/x-mpegURL" />
+    </audio>
 </body>
 </html>
