@@ -1,33 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-  <style>
-    LEFT OUT BECAUSE OF LINE LIMIT AT STACKOVERFLOW
-  </style>
-</head>
-<body>
-  <video id="video" style="width: 100%; height: 100%;" controls></video>
-  <script>
-    function playM3u8(url){
-      if(Hls.isSupported()) {
-        var video = document.getElementById('video');
-        video.volume = 1.0;
-        var hls = new Hls();
-        var m3u8Url = decodeURIComponent(url)
-        hls.loadSource(m3u8Url);
-        hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED,function() {
-          video.play();
-        });
-      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = url;
-        video.addEventListener('loadedmetadata', function() {
-          video.play();
-        });
-      }
-    }
-    playM3u8("https://prod-ec-sa-east-1.video.pscp.tv/Transcoding/v1/hls/8ijB4Mjk9_-ahp6WqOElVICLpvL7Jw8wskMKaWWw_Bg0mepTKsWk3sTt4B9Bd2g-gLghHivK5_15S89aLXCpCQ/non_transcode/sa-east-1/periscope-replay-direct-prod-sa-east-1-public/master_dynamic_highlatency.m3u8?type=live")
-  </script>
-</body>
-</html>
+<!-- CSS  -->
+ <link href="https://vjs.zencdn.net/7.2.3/video-js.css" rel="stylesheet">
+
+
+<!-- HTML -->
+<video id='hls-example'  class="video-js vjs-default-skin" width="400" height="300" controls>
+<source type="application/x-mpegURL" src="http://www.streambox.fr/playlists/test_001/stream.m3u8">
+</video>
+
+
+<!-- JS code -->
+<!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+<script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.14.1/videojs-contrib-hls.js"></script>
+<script src="https://vjs.zencdn.net/7.2.3/video.js"></script>
+
+<script>
+var player = videojs('https://prod-ec-sa-east-1.video.pscp.tv/Transcoding/v1/hls/8ijB4Mjk9_-ahp6WqOElVICLpvL7Jw8wskMKaWWw_Bg0mepTKsWk3sTt4B9Bd2g-gLghHivK5_15S89aLXCpCQ/non_transcode/sa-east-1/periscope-replay-direct-prod-sa-east-1-public/master_dynamic_highlatency.m3u8?type=live');
+player.play();
+</script>
