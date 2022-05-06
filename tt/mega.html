@@ -1,22 +1,29 @@
-<body>
-    <video id="player" controls autoplay style="width:400px;height:300px;">
-    </video>
-    <script>
-    fetch("./mfs.avc.ne.m3u8")
-        .then(function (response) {
-            return response.blob();
-        })
-        .then(function (m3u8blob) {
-           
-            console.log(m3u8blob);
-            // var bb = new Blob([m3u8blob],{type:"application/x-mpegURL"});
-            // console.log(bb);
-            var video = document.getElementById("player");
-            video.src = URL.createObjectURL(m3u8blob);
-            // console.log(bb.getBlob(type));
-            // video.src = "https://live-rpc-pr-05.video.globo.com/h/0411651872911163873459116517865111563062392FhAtrWsA9X35PuIcEJY11A/k/html5/a/F/u/BR~fc07362a-37aa-47e1-b772-7437a7380651/nu/spo124ha/spo124ha-audio_1=96000-video=1476992.m3u8";
 
-            video.type = "application/x-mpegURL";
-            
-        })
-</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>OPCAO 2 - canal1</title></head>
+<style type="text/css">
+<!--
+body {
+	background-color: #000;
+}
+-->
+</style>
+<body>
+<script src='//cdn.jsdelivr.net/npm/cdnbye@latest' type="e21911c61b073b7973393db9-text/javascript"></script>
+<video autoplay='auto' class='videofm' controls='' height='100%' id='video' preload='metadata' referrerpolicy='strict-origin' width='100%'></video>
+<script type="e21911c61b073b7973393db9-text/javascript">var video = document.getElementById('video'); var source = 'https://server1.cdnagora33.com/hls/canal1/index.m3u8'; if(Hls.isSupported()) {var hls = new Hls(); hls.loadSource(source); hls.attachMedia(video);}</script>
+<span data-widget="mcp-stream-status" data-name="hls" data-online-text="espectadores" data-offline-text="Offline"></span>
+<script defer type="e21911c61b073b7973393db9-text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4480393,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+_Hasync.push(['Histats.framed_page', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4480393&101" alt="myspace tracker" border="0"></a></noscript>
+</div>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="e21911c61b073b7973393db9-|49" defer=""></script></body>
+</html>
