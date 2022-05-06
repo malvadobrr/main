@@ -1,25 +1,25 @@
- <!DOCTYPE html>
-    <html>
-    <head>
-    <meta charset=utf-8 />
-    <title>Your title</title>
-      
-    
-      <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
-      <script src="https://unpkg.com/video.js/dist/video.js"></script>
-      <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
-       
-    </head>
-    <body>
-      <video id="my_video_1" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
-      data-setup='{}'>
-        <source src="https://prod-ec-sa-east-1.video.pscp.tv/Transcoding/v1/hls/8ijB4Mjk9_-ahp6WqOElVICLpvL7Jw8wskMKaWWw_Bg0mepTKsWk3sTt4B9Bd2g-gLghHivK5_15S89aLXCpCQ/non_transcode/sa-east-1/periscope-replay-direct-prod-sa-east-1-public/master_dynamic_highlatency.m3u8?type=live" type="application/x-mpegURL">
-      </video>
-      
-    <script>
-    var player = videojs('my_video_1');
-    player.play();
-    </script>
-      
-    </body>
-    </html>
+<link rel="stylesheet" href="//releases.flowplayer.org/7.0.4/commercial/skin/skin.css">
+    <style>
+
+   </style>
+   <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="//releases.flowplayer.org/7.0.4/commercial/flowplayer.min.js"></script>
+  <script src="//releases.flowplayer.org/hlsjs/flowplayer.hlsjs.min.js"></script> 
+  <script>
+  flowplayer(function (api) {
+    api.on("load", function (e, api, video) {
+      $("#vinfo").text(api.engine.engineName + " engine playing " + video.type);
+    }); });
+  </script>
+
+<div class="flowplayer fixed-controls no-toggle no-time play-button obj"
+      style="    width: 85.5%;
+    height: 80%;
+    margin-left: 7.2%;
+    margin-top: 6%;
+    z-index: 1000;" data-key="$812975748999788" data-live="true" data-share="false" data-ratio="0.5625"  data-logo="">
+      <video autoplay="true" stretch="true">
+
+         <source type="application/x-mpegurl" src="https://prod-ec-sa-east-1.video.pscp.tv/Transcoding/v1/hls/8ijB4Mjk9_-ahp6WqOElVICLpvL7Jw8wskMKaWWw_Bg0mepTKsWk3sTt4B9Bd2g-gLghHivK5_15S89aLXCpCQ/non_transcode/sa-east-1/periscope-replay-direct-prod-sa-east-1-public/master_dynamic_highlatency.m3u8?type=live">
+      </video>   
+   </div>
