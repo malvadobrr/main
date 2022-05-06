@@ -1,2 +1,53 @@
-<video width="300" height="200" controls>   <source src="https://prod-ec-us-west-2.video.pscp.tv/Transcoding/v1/hls/HOxIVmeW_Ql9_MBrEvmXCJoRRfk46jmpeYfUJ2eq0QF_yQCAanerXCGtN0-uXynNiMbxBQG9oEGrm8yewMKKKQ/transcode/us-west-2/periscope-replay-direct-prod-us-west-2-public/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInZlcnNpb24iOiIyIn0.eyJFbmNvZGVyU2V0dGluZyI6ImVuY29kZXJfc2V0dGluZ183MjBwMzBfMTAiLCJIZWlnaHQiOjcyMCwiS2JwcyI6Mjc1MCwiV2lkdGgiOjEyODB9.ldktM4fCFRfkP4ZEBfZPKtlAUNAcTPkoz994YJAzWpE/dynamic_highlatency.m3u8?type=live"
-type="application/x-mpegURL> </video>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <title>Camera</title>
+  <link href="https://vjs.zencdn.net/7.17.0/video-js.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Avenir Next Var','Lucida Grande',Helvetica,sans-serif;
+    }
+    .container {
+      margin: 0 auto;
+      width:960px;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="container">
+
+    <h3>Journalism Camera</h3>
+    <h4>Emerson College - Boston, MA.</h4>
+
+    <video
+    id="my-video"
+    class="video-js"
+    controls
+    autoplay="true"
+    muted="true"
+    preload="auto"
+    width="960"
+    height="540"
+    data-setup="{}"
+  >
+    <source src="http://localhost:8080/hls/livestream1.m3u8" type="application/x-mpegURL" />
+    <source src="http://localhost:8080/dash/livestream1.mpd" type="application/dash+xml" />
+   
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a
+      web browser that
+      <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    </p>
+  </video>
+
+</div>
+
+<script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
+
+</body>
+</html>
