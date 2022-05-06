@@ -1,25 +1,53 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-    <meta charset=utf-8 />
-    <title>Your title</title>
-      
-    
-      <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
-      <script src="https://unpkg.com/video.js/dist/video.js"></script>
-      <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
-       
-    </head>
-    <body>
-      <video id="my_video_1" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
-      data-setup='{}'>
-        <source src="https://prod-ec-sa-east-1.video.pscp.tv/Transcoding/v1/hls/8ijB4Mjk9_-ahp6WqOElVICLpvL7Jw8wskMKaWWw_Bg0mepTKsWk3sTt4B9Bd2g-gLghHivK5_15S89aLXCpCQ/non_transcode/sa-east-1/periscope-replay-direct-prod-sa-east-1-public/master_dynamic_highlatency.m3u8?type=live" type="application/x-mpegURL">
-      </video>
-      
-    <script>
-    var player = videojs('my_video_1');
-    player.play();
-    </script>
-      
-    </body>
-    </html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <title>Camera</title>
+  <link href="https://vjs.zencdn.net/7.17.0/video-js.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Avenir Next Var','Lucida Grande',Helvetica,sans-serif;
+    }
+    .container {
+      margin: 0 auto;
+      width:960px;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="container">
+
+    <h3>Journalism Camera</h3>
+    <h4>Emerson College - Boston, MA.</h4>
+
+    <video
+    id="my-video"
+    class="video-js"
+    controls
+    autoplay="true"
+    muted="true"
+    preload="auto"
+    width="960"
+    height="540"
+    data-setup="{}"
+  >
+    <source src="https://prod-ec-sa-east-1.video.pscp.tv/Transcoding/v1/hls/8ijB4Mjk9_-ahp6WqOElVICLpvL7Jw8wskMKaWWw_Bg0mepTKsWk3sTt4B9Bd2g-gLghHivK5_15S89aLXCpCQ/non_transcode/sa-east-1/periscope-replay-direct-prod-sa-east-1-public/master_dynamic_highlatency.m3u8?type=live" type="application/x-mpegURL" />
+    <source src="https://prod-ec-sa-east-1.video.pscp.tv/Transcoding/v1/hls/8ijB4Mjk9_-ahp6WqOElVICLpvL7Jw8wskMKaWWw_Bg0mepTKsWk3sTt4B9Bd2g-gLghHivK5_15S89aLXCpCQ/non_transcode/sa-east-1/periscope-replay-direct-prod-sa-east-1-public/master_dynamic_highlatency.m3u8?type=live" type="application/dash+xml" />
+   
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a
+      web browser that
+      <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    </p>
+  </video>
+
+</div>
+
+<script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
+
+</body>
+</html>
