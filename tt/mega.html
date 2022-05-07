@@ -1,35 +1,186 @@
+<!doctype html>
+<html>
 
-
-<!DOCTYPE html>
-<html dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
-<meta content='width=device-width, initial-scale=1' name='viewport' />
-<title> Live Player</title>
-<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-<meta name="referrer" content="no-referrer" />
-<style id='page-skin-1' type='text/css'><!--
-/* Style */
-*{margin:0;padding:0;overflow:hidden;background-color:#000;}
-#player{width:100%;height:100vh;}
-
---></style>
-<script type="87a8567eb5bb3deae5fe81de-text/javascript"> 
-      function getUrlVars() {
-        var vars = {};
-        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
-        vars[key] = value;
-      });
-          return vars;
+  <meta charset="utf-8">
+  <title>Video Gallery</title>
+  <style>
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      font: 400 16px/1.45 'Verdana';
+    }
+    
+    body {
+      position: relative;
+      background: #111;
+      color: #EEE;
+    }
+    
+    .gallery {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      width: 100vw;
+      height: 50vh;
+    }
+    
+    #sec2 {
+      justify-content: center;
+    }
+    
+    .vid {
+      width: 240px;
+      flex 0 2 auto;
+    }
+    
+    .solo {
+      width: 480px;
+      flex: 0 2 auto;
+    }
+    
+    video {
+      width: 100%;
+      height: auto;
+    }
+    
+    .list {
+      border: 3px inset #fc3;
+      margin: 0 10px;
+    }
+    
+    .list a {
+      text-decoration: none;
+      cursor: pointer;
+      display: block;
+      width: 75px;
+      height: 75px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: #00f;
+      font-size: 1rem;
+      border-bottom: 1px solid #fc0;
+    }
+    
+    .list a:hover {
+      color: #0ff;
+    }
+    
+    @media screen and (max-width: 768px) {
+      #sec1 {
+        justify-content: flex-start;
       }
-      var link = getUrlVars()["src"];
-    </script>
+      #sec2 {
+        justify-content: flex-end;
+      }
+      .vid {
+        flex: 0 2 auto;
+        width: 160px;
+      }
+      .solo {
+        flex: 0 2 auto;
+        width: 320px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<video controls='true' id='player'></video>
-<script type="87a8567eb5bb3deae5fe81de-text/javascript">
-      var video = document.getElementById('player');
-      video.src = link;
-    </script>
-<div class='no-items section' id='yalla-player'></div>
-<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="87a8567eb5bb3deae5fe81de-|49" defer=""></script></body>
+  <section id="sec1" class="gallery">
+    <div id="vid1" class="vid"></div>
+    <div id="vid2" class="vid"></div>
+    <div id="vid3" class="vid"></div>
+    <div id="vid4" class="vid"></div>
+  </section>
+
+  <section id="sec2" class="gallery">
+    <div id="vid5" class="solo">
+      <video id="vid5v" poster="https://glpjt.s3.amazonaws.com/so/av/vid5.png" controls=true>
+        <source src="https://glpjt.s3.amazonaws.com/so/av/vid5.mp4" type="video/mp4">
+      </video>
+    </div>
+    <nav id="vNav5" class="list"></nav>
+  </section>
+
+  <script>
+    var vNav5 = document.getElementById('vNav5');
+    var playlist = ['vid1', 'vid2', 'vid3', 'vid4'];
+
+
+    function loadPlayers() {
+      var divs = document.querySelectorAll('.vid');
+      var ids = Array.prototype.map.call(divs, function(obj) {
+        var ID = obj.id;
+        return vStruct(ID);
+      });
+    }
+
+    function vStruct(id) {
+      var vTag = document.createElement('video');
+      var vSrc = document.createElement('source');
+
+      var vDiv = document.getElementById(id);
+      var vIDv = id.toString();
+      vTag.id = vIDv + 'v';
+      var vUrl = 'https://glpjt.s3.amazonaws.com/so/av/';
+      var vPng = vUrl + id + '.png';
+      var vMp4 = vUrl + id + '.mp4';
+
+      vTag.setAttribute('poster', vPng);
+      vTag.setAttribute('controls', true);
+
+      vSrc.setAttribute('src', vMp4);
+      vSrc.setAttribute('type', 'video/mp4');
+
+      vDiv.appendChild(vTag);
+      vTag.appendChild(vSrc);
+
+    }
+
+    function generateList(vArr, vStr) {
+      var vTgt = document.querySelector(vStr);
+      var lArr = vArr.map(eachLink);
+      lArr.forEach(function(obj) {
+        vTgt.appendChild(obj);
+      });
+    }
+
+    function eachLink(id) {
+      var ID = id.toString();
+      var vUrl = 'https://glpjt.s3.amazonaws.com/so/av/';
+      var vLink = document.createElement('a');
+      vLink.setAttribute('href', vUrl + ID + '.mp4');
+      vLink.textContent = ID;
+      vLink.style.backgroundImage = "url('" + vUrl + ID + ".png')";
+      return vLink;
+    }
+
+    vNav5.addEventListener('click', playSelect, false);
+
+    function playSelect(e) {
+      e.preventDefault();
+
+      if (e.currentTarget !== e.target) {
+        var choice = e.target.href;
+        var parent = e.target.parentElement;
+        var uncle = parent.previousElementSibling;
+        var vid = uncle.querySelector('video');
+        if (vid.playing) {
+          vid.pause();
+        }
+        vid.src = "";
+        vid.src = choice;
+        vid.load();
+        vid.play();
+        e.stopPropagation();
+      }
+    }
+
+    loadPlayers();
+
+    generateList(playlist, '#vNav5');
+  </script>
+</body>
+
 </html>
