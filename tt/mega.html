@@ -1,2 +1,13 @@
-<video width="300" height="200" controls>   <source src="http://200.71.72.50/110/tracks-v1a1/mono.m3u8"
-type="application/x-mpegURL> </video>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<video id="video"></video>
+<script>
+  if(Hls.isSupported()) {
+    var video = document.getElementById('video');
+    var hls = new Hls();
+    hls.loadSource('http://200.71.72.50/110/tracks-v1a1/mono.m3u8');
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+      video.play();
+  });
+ }
+</script>
