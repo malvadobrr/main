@@ -1,186 +1,29 @@
-<!doctype html>
-<html>
 
-<head>
-  <meta charset="utf-8">
-  <title>Video Gallery</title>
-  <style>
-    html,
-    body {
-      width: 100%;
-      height: 100%;
-      font: 400 16px/1.45 'Verdana';
-    }
-    
-    body {
-      position: relative;
-      background: #111;
-      color: #EEE;
-    }
-    
-    .gallery {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-between;
-      width: 100vw;
-      height: 50vh;
-    }
-    
-    #sec2 {
-      justify-content: center;
-    }
-    
-    .vid {
-      width: 240px;
-      flex 0 2 auto;
-    }
-    
-    .solo {
-      width: 480px;
-      flex: 0 2 auto;
-    }
-    
-    video {
-      width: 100%;
-      height: auto;
-    }
-    
-    .list {
-      border: 3px inset #fc3;
-      margin: 0 10px;
-    }
-    
-    .list a {
-      text-decoration: none;
-      cursor: pointer;
-      display: block;
-      width: 75px;
-      height: 75px;
-      background-repeat: no-repeat;
-      background-size: cover;
-      color: #00f;
-      font-size: 1rem;
-      border-bottom: 1px solid #fc0;
-    }
-    
-    .list a:hover {
-      color: #0ff;
-    }
-    
-    @media screen and (max-width: 768px) {
-      #sec1 {
-        justify-content: flex-start;
-      }
-      #sec2 {
-        justify-content: flex-end;
-      }
-      .vid {
-        flex: 0 2 auto;
-        width: 160px;
-      }
-      .solo {
-        flex: 0 2 auto;
-        width: 320px;
-      }
-    }
-  </style>
-</head>
-
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>OPCAO 2 - canal1</title></head>
+<style type="text/css">
+<!--
+body {
+	background-color: #000;
+}
+-->
+</style>
 <body>
-  <section id="sec1" class="gallery">
-    <div id="vid1" class="vid"></div>
-    <div id="vid2" class="vid"></div>
-    <div id="vid3" class="vid"></div>
-    <div id="vid4" class="vid"></div>
-  </section>
-
-  <section id="sec2" class="gallery">
-    <div id="vid5" class="solo">
-      <video id="vid5v" poster="https://glpjt.s3.amazonaws.com/so/av/vid5.png" controls=true>
-        <source src="https://glpjt.s3.amazonaws.com/so/av/vid5.mp4" type="video/mp4">
-      </video>
-    </div>
-    <nav id="vNav5" class="list"></nav>
-  </section>
-
-  <script>
-    var vNav5 = document.getElementById('vNav5');
-    var playlist = ['vid1', 'vid2', 'vid3', 'vid4'];
-
-
-    function loadPlayers() {
-      var divs = document.querySelectorAll('.vid');
-      var ids = Array.prototype.map.call(divs, function(obj) {
-        var ID = obj.id;
-        return vStruct(ID);
-      });
-    }
-
-    function vStruct(id) {
-      var vTag = document.createElement('video');
-      var vSrc = document.createElement('source');
-
-      var vDiv = document.getElementById(id);
-      var vIDv = id.toString();
-      vTag.id = vIDv + 'v';
-      var vUrl = 'https://glpjt.s3.amazonaws.com/so/av/';
-      var vPng = vUrl + id + '.png';
-      var vMp4 = vUrl + id + '.mp4';
-
-      vTag.setAttribute('poster', vPng);
-      vTag.setAttribute('controls', true);
-
-      vSrc.setAttribute('src', vMp4);
-      vSrc.setAttribute('type', 'video/mp4');
-
-      vDiv.appendChild(vTag);
-      vTag.appendChild(vSrc);
-
-    }
-
-    function generateList(vArr, vStr) {
-      var vTgt = document.querySelector(vStr);
-      var lArr = vArr.map(eachLink);
-      lArr.forEach(function(obj) {
-        vTgt.appendChild(obj);
-      });
-    }
-
-    function eachLink(id) {
-      var ID = id.toString();
-      var vUrl = 'https://glpjt.s3.amazonaws.com/so/av/';
-      var vLink = document.createElement('a');
-      vLink.setAttribute('href', vUrl + ID + '.mp4');
-      vLink.textContent = ID;
-      vLink.style.backgroundImage = "url('" + vUrl + ID + ".png')";
-      return vLink;
-    }
-
-    vNav5.addEventListener('click', playSelect, false);
-
-    function playSelect(e) {
-      e.preventDefault();
-
-      if (e.currentTarget !== e.target) {
-        var choice = e.target.href;
-        var parent = e.target.parentElement;
-        var uncle = parent.previousElementSibling;
-        var vid = uncle.querySelector('video');
-        if (vid.playing) {
-          vid.pause();
-        }
-        vid.src = "";
-        vid.src = choice;
-        vid.load();
-        vid.play();
-        e.stopPropagation();
-      }
-    }
-
-    loadPlayers();
-
-    generateList(playlist, '#vNav5');
-  </script>
-</body>
-
+<script src='//cdn.jsdelivr.net/npm/cdnbye@latest' type="2f5d47629c35fbf623afe76d-text/javascript"></script>
+<video autoplay='auto' class='videofm' controls='' height='100%' id='video' preload='metadata' referrerpolicy='strict-origin' width='100%'></video>
+<script type="2f5d47629c35fbf623afe76d-text/javascript">var video = document.getElementById('video'); var source = 'https://server4.cdnagora33.com/hls/canal1/index.m3u8'; if(Hls.isSupported()) {var hls = new Hls(); hls.loadSource(source); hls.attachMedia(video);}</script>
+<span data-widget="mcp-stream-status" data-name="hls" data-online-text="espectadores" data-offline-text="Offline"></span>
+<script defer type="2f5d47629c35fbf623afe76d-text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4480393,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+_Hasync.push(['Histats.framed_page', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4480393&101" alt="myspace tracker" border="0"></a></noscript>
+</div>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="2f5d47629c35fbf623afe76d-|49" defer=""></script></body>
 </html>
