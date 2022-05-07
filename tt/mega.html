@@ -1,25 +1,34 @@
+
 <!DOCTYPE html>
-    <html>
-    <head>
-    <meta charset=utf-8 />
-    <title>Your title</title>
-      
-    
-      <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
-      <script src="https://unpkg.com/video.js/dist/video.js"></script>
-      <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
-       
-    </head>
-    <body>
-      <video id="my_video_1" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
-      data-setup='{}'>
-        <source src="http://200.71.72.50/22/tracks-v1a1/mono.m3u8" type="application/x-mpegURL">
-      </video>
-      
-    <script>
-    var player = videojs('my_video_1');
-    player.play();
+<html dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<meta content='width=device-width, initial-scale=1' name='viewport' />
+<meta name="referrer" content="no-referrer" />
+<title> Live Player</title>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+<style id='page-skin-1' type='text/css'><!--
+/* Style */
+*{margin:0;padding:0;overflow:hidden;background-color:#000;}
+#player{width:100%;height:100vh;}
+
+--></style>
+<script type="4a9e8b4705cb20640c0c727b-text/javascript"> 
+      function getUrlVars() {
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+        vars[key] = value;
+      });
+          return vars;
+      }
+      var link = getUrlVars()["src"];
     </script>
-      
-    </body>
-    </html>
+</head>
+<body>
+<video controls='true' id='player'></video>
+<script type="4a9e8b4705cb20640c0c727b-text/javascript">
+      var video = document.getElementById('player');
+      video.src = link;
+    </script>
+<div class='no-items section' id='yalla-player'></div>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="4a9e8b4705cb20640c0c727b-|49" defer=""></script></body>
+</html>
